@@ -14,6 +14,17 @@
 		10404A931E3012730063D23C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10404A911E3012730063D23C /* LaunchScreen.storyboard */; };
 		10404A9E1E3012730063D23C /* HUDMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10404A9D1E3012730063D23C /* HUDMessageTests.swift */; };
 		10404AA91E3012730063D23C /* HUDMessageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10404AA81E3012730063D23C /* HUDMessageUITests.swift */; };
+		10404ABC1E3017B90063D23C /* HUDMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10404ABB1E3017B90063D23C /* HUDMessageView.swift */; };
+		10404ABE1E301FB20063D23C /* HUDNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10404ABD1E301FB20063D23C /* HUDNotificationManager.swift */; };
+		10404AC01E3023240063D23C /* HUDMessageView+PublicMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10404ABF1E3023240063D23C /* HUDMessageView+PublicMethods.swift */; };
+		10404AC21E302C7D0063D23C /* HUDMessageView+internalMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10404AC11E302C7D0063D23C /* HUDMessageView+internalMethods.swift */; };
+		10404AC61E3035800063D23C /* HUDConfigKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10404AC51E3035800063D23C /* HUDConfigKeys.swift */; };
+		10404ACB1E303BFA0063D23C /* HUDConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10404ACA1E303BFA0063D23C /* HUDConfigModel.swift */; };
+		10404ACD1E3042510063D23C /* HUDDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10404ACC1E3042510063D23C /* HUDDataModel.swift */; };
+		10BAAAE21E30677900AA5CC1 /* HUDDataKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAAAE11E30677900AA5CC1 /* HUDDataKeys.swift */; };
+		10BAAAE51E30687400AA5CC1 /* UIColor+hexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAAAE31E30687400AA5CC1 /* UIColor+hexString.swift */; };
+		10BAAAE61E30687400AA5CC1 /* UIImage+bundledImageNamed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAAAE41E30687400AA5CC1 /* UIImage+bundledImageNamed.swift */; };
+		10BAAAE81E30689600AA5CC1 /* HUDEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAAAE71E30689600AA5CC1 /* HUDEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +58,17 @@
 		10404AA41E3012730063D23C /* HUDMessageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HUDMessageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10404AA81E3012730063D23C /* HUDMessageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDMessageUITests.swift; sourceTree = "<group>"; };
 		10404AAA1E3012730063D23C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10404ABB1E3017B90063D23C /* HUDMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDMessageView.swift; sourceTree = "<group>"; };
+		10404ABD1E301FB20063D23C /* HUDNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDNotificationManager.swift; sourceTree = "<group>"; };
+		10404ABF1E3023240063D23C /* HUDMessageView+PublicMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HUDMessageView+PublicMethods.swift"; sourceTree = "<group>"; };
+		10404AC11E302C7D0063D23C /* HUDMessageView+internalMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HUDMessageView+internalMethods.swift"; sourceTree = "<group>"; };
+		10404AC51E3035800063D23C /* HUDConfigKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDConfigKeys.swift; sourceTree = "<group>"; };
+		10404ACA1E303BFA0063D23C /* HUDConfigModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDConfigModel.swift; sourceTree = "<group>"; };
+		10404ACC1E3042510063D23C /* HUDDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDDataModel.swift; sourceTree = "<group>"; };
+		10BAAAE11E30677900AA5CC1 /* HUDDataKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDDataKeys.swift; sourceTree = "<group>"; };
+		10BAAAE31E30687400AA5CC1 /* UIColor+hexString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hexString.swift"; sourceTree = "<group>"; };
+		10BAAAE41E30687400AA5CC1 /* UIImage+bundledImageNamed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+bundledImageNamed.swift"; sourceTree = "<group>"; };
+		10BAAAE71E30689600AA5CC1 /* HUDEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +119,12 @@
 		10404A871E3012730063D23C /* HUDMessage */ = {
 			isa = PBXGroup;
 			children = (
-				10404A881E3012730063D23C /* AppDelegate.swift */,
 				10404A8A1E3012730063D23C /* ViewController.swift */,
 				10404A8C1E3012730063D23C /* Main.storyboard */,
-				10404A8F1E3012730063D23C /* Assets.xcassets */,
-				10404A911E3012730063D23C /* LaunchScreen.storyboard */,
-				10404A941E3012730063D23C /* Info.plist */,
+				10404AC71E3039410063D23C /* Extension+UIKit */,
+				10404AC41E3035710063D23C /* Tools */,
+				10404AB71E3014B90063D23C /* Messages */,
+				10404AB61E30143F0063D23C /* Supporting Files */,
 			);
 			path = HUDMessage;
 			sourceTree = "<group>";
@@ -123,6 +145,49 @@
 				10404AAA1E3012730063D23C /* Info.plist */,
 			);
 			path = HUDMessageUITests;
+			sourceTree = "<group>";
+		};
+		10404AB61E30143F0063D23C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				10404A881E3012730063D23C /* AppDelegate.swift */,
+				10404A8F1E3012730063D23C /* Assets.xcassets */,
+				10404A911E3012730063D23C /* LaunchScreen.storyboard */,
+				10404A941E3012730063D23C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		10404AB71E3014B90063D23C /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				10404ABB1E3017B90063D23C /* HUDMessageView.swift */,
+				10404ABF1E3023240063D23C /* HUDMessageView+PublicMethods.swift */,
+				10404ABD1E301FB20063D23C /* HUDNotificationManager.swift */,
+				10404AC11E302C7D0063D23C /* HUDMessageView+internalMethods.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		10404AC41E3035710063D23C /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				10404AC51E3035800063D23C /* HUDConfigKeys.swift */,
+				10404ACA1E303BFA0063D23C /* HUDConfigModel.swift */,
+				10404ACC1E3042510063D23C /* HUDDataModel.swift */,
+				10BAAAE11E30677900AA5CC1 /* HUDDataKeys.swift */,
+				10BAAAE71E30689600AA5CC1 /* HUDEnum.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		10404AC71E3039410063D23C /* Extension+UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				10BAAAE31E30687400AA5CC1 /* UIColor+hexString.swift */,
+				10BAAAE41E30687400AA5CC1 /* UIImage+bundledImageNamed.swift */,
+			);
+			path = "Extension+UIKit";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +258,7 @@
 				TargetAttributes = {
 					10404A841E3012730063D23C = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = UE4HZRGDJ7;
 						ProvisioningStyle = Automatic;
 					};
 					10404A981E3012730063D23C = {
@@ -259,8 +325,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10404AC21E302C7D0063D23C /* HUDMessageView+internalMethods.swift in Sources */,
+				10404ACB1E303BFA0063D23C /* HUDConfigModel.swift in Sources */,
+				10404ABC1E3017B90063D23C /* HUDMessageView.swift in Sources */,
+				10404AC61E3035800063D23C /* HUDConfigKeys.swift in Sources */,
 				10404A8B1E3012730063D23C /* ViewController.swift in Sources */,
+				10BAAAE51E30687400AA5CC1 /* UIColor+hexString.swift in Sources */,
+				10BAAAE61E30687400AA5CC1 /* UIImage+bundledImageNamed.swift in Sources */,
+				10404ACD1E3042510063D23C /* HUDDataModel.swift in Sources */,
+				10404ABE1E301FB20063D23C /* HUDNotificationManager.swift in Sources */,
+				10BAAAE21E30677900AA5CC1 /* HUDDataKeys.swift in Sources */,
 				10404A891E3012730063D23C /* AppDelegate.swift in Sources */,
+				10BAAAE81E30689600AA5CC1 /* HUDEnum.swift in Sources */,
+				10404AC01E3023240063D23C /* HUDMessageView+PublicMethods.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +487,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UE4HZRGDJ7;
 				INFOPLIST_FILE = HUDMessage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PSL.HUDMessage;
@@ -422,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UE4HZRGDJ7;
 				INFOPLIST_FILE = HUDMessage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PSL.HUDMessage;
@@ -503,6 +582,7 @@
 				10404AAF1E3012730063D23C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		10404AB01E3012730063D23C /* Build configuration list for PBXNativeTarget "HUDMessageTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +591,7 @@
 				10404AB21E3012730063D23C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		10404AB31E3012730063D23C /* Build configuration list for PBXNativeTarget "HUDMessageUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +600,7 @@
 				10404AB51E3012730063D23C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
