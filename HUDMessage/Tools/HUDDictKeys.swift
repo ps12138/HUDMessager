@@ -31,8 +31,6 @@ struct HUDConfigKeys {
 }
 
 
-
-
 struct HUDStyleKeys {
     static let imageName = "imageName"
     static let backgroundImageName = "backgroundImageName"

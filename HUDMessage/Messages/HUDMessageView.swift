@@ -22,7 +22,7 @@ public class HUDMessageView: UIView {
     
    
     
-    // MARK: - View
+    // MARK: - Views
     internal var image: UIImage?
     internal var titleLabel: UILabel!
     internal var contentLabel: UILabel?
@@ -32,7 +32,7 @@ public class HUDMessageView: UIView {
     internal var backgroundImageView: UIImageView!
     internal var backgroundBlurView: UIImageView!
     
-    // MARK: - style
+    // MARK: - View styles
     public var titleFont: UIFont?
     public var titleTextColor: UIColor?
     public var contentFont: UIFont?
