@@ -10,6 +10,7 @@
 		101040AA1E38594D00E61DCB /* HUDMessageView+LeftCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101040A91E38594D00E61DCB /* HUDMessageView+LeftCycle.swift */; };
 		101040AC1E385DBB00E61DCB /* HUDDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101040AB1E385DBB00E61DCB /* HUDDefault.swift */; };
 		101040AE1E3860ED00E61DCB /* HUDConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101040AD1E3860ED00E61DCB /* HUDConfig.swift */; };
+		101040B01E38666900E61DCB /* HUDMessageView+EventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101040AF1E38666900E61DCB /* HUDMessageView+EventResponse.swift */; };
 		10404A891E3012730063D23C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10404A881E3012730063D23C /* AppDelegate.swift */; };
 		10404A8B1E3012730063D23C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10404A8A1E3012730063D23C /* ViewController.swift */; };
 		10404A8E1E3012730063D23C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10404A8C1E3012730063D23C /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		10404AC61E3035800063D23C /* HUDDictKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10404AC51E3035800063D23C /* HUDDictKeys.swift */; };
 		10404ACB1E303BFA0063D23C /* HUDStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10404ACA1E303BFA0063D23C /* HUDStyle.swift */; };
 		10404ACD1E3042510063D23C /* HUDDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10404ACC1E3042510063D23C /* HUDDataSource.swift */; };
+		108B82F21E394C2900C9A631 /* HUDMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108B82F11E394C2900C9A631 /* HUDMessageController.swift */; };
 		10BAAAE51E30687400AA5CC1 /* UIColor+hexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAAAE31E30687400AA5CC1 /* UIColor+hexString.swift */; };
 		10BAAAE61E30687400AA5CC1 /* UIImage+bundledImageNamed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAAAE41E30687400AA5CC1 /* UIImage+bundledImageNamed.swift */; };
 		10BAAAE81E30689600AA5CC1 /* HUDEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAAAE71E30689600AA5CC1 /* HUDEnum.swift */; };
@@ -50,6 +52,7 @@
 		101040A91E38594D00E61DCB /* HUDMessageView+LeftCycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HUDMessageView+LeftCycle.swift"; sourceTree = "<group>"; };
 		101040AB1E385DBB00E61DCB /* HUDDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDDefault.swift; sourceTree = "<group>"; };
 		101040AD1E3860ED00E61DCB /* HUDConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDConfig.swift; sourceTree = "<group>"; };
+		101040AF1E38666900E61DCB /* HUDMessageView+EventResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HUDMessageView+EventResponse.swift"; sourceTree = "<group>"; };
 		10404A851E3012730063D23C /* HUDMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HUDMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10404A881E3012730063D23C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10404A8A1E3012730063D23C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 		10404AC51E3035800063D23C /* HUDDictKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDDictKeys.swift; sourceTree = "<group>"; };
 		10404ACA1E303BFA0063D23C /* HUDStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDStyle.swift; sourceTree = "<group>"; };
 		10404ACC1E3042510063D23C /* HUDDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDDataSource.swift; sourceTree = "<group>"; };
+		108B82F11E394C2900C9A631 /* HUDMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDMessageController.swift; sourceTree = "<group>"; };
 		10BAAAE31E30687400AA5CC1 /* UIColor+hexString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hexString.swift"; sourceTree = "<group>"; };
 		10BAAAE41E30687400AA5CC1 /* UIImage+bundledImageNamed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+bundledImageNamed.swift"; sourceTree = "<group>"; };
 		10BAAAE71E30689600AA5CC1 /* HUDEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDEnum.swift; sourceTree = "<group>"; };
@@ -170,6 +174,8 @@
 				10404ABD1E301FB20063D23C /* HUDNotificationManager.swift */,
 				10404AC11E302C7D0063D23C /* HUDMessageView+internalMethods.swift */,
 				101040A91E38594D00E61DCB /* HUDMessageView+LeftCycle.swift */,
+				101040AF1E38666900E61DCB /* HUDMessageView+EventResponse.swift */,
+				108B82F11E394C2900C9A631 /* HUDMessageController.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -181,8 +187,8 @@
 				10404AC51E3035800063D23C /* HUDDictKeys.swift */,
 				10404ACA1E303BFA0063D23C /* HUDStyle.swift */,
 				10404ACC1E3042510063D23C /* HUDDataSource.swift */,
-				10BAAAE71E30689600AA5CC1 /* HUDEnum.swift */,
 				101040AD1E3860ED00E61DCB /* HUDConfig.swift */,
+				10BAAAE71E30689600AA5CC1 /* HUDEnum.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -333,12 +339,14 @@
 			files = (
 				10404AC21E302C7D0063D23C /* HUDMessageView+internalMethods.swift in Sources */,
 				10404ACB1E303BFA0063D23C /* HUDStyle.swift in Sources */,
+				101040B01E38666900E61DCB /* HUDMessageView+EventResponse.swift in Sources */,
 				101040AA1E38594D00E61DCB /* HUDMessageView+LeftCycle.swift in Sources */,
 				10404ABC1E3017B90063D23C /* HUDMessageView.swift in Sources */,
 				101040AC1E385DBB00E61DCB /* HUDDefault.swift in Sources */,
 				10404AC61E3035800063D23C /* HUDDictKeys.swift in Sources */,
 				10404A8B1E3012730063D23C /* ViewController.swift in Sources */,
 				10BAAAE51E30687400AA5CC1 /* UIColor+hexString.swift in Sources */,
+				108B82F21E394C2900C9A631 /* HUDMessageController.swift in Sources */,
 				101040AE1E3860ED00E61DCB /* HUDConfig.swift in Sources */,
 				10BAAAE61E30687400AA5CC1 /* UIImage+bundledImageNamed.swift in Sources */,
 				10404ACD1E3042510063D23C /* HUDDataSource.swift in Sources */,

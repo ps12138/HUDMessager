@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct HUDDataSource {
+public struct HUDDataSource {
     var title: String
     var content: String?
     var buttonTitle: String?

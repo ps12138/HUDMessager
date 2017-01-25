@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct HUDStyle {
+public struct HUDStyle {
     var imageName: String
     var backgroundImageName: String
     

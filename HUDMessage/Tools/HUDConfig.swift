@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
-struct HUDConfig {
-    var notificationType: HUDNotificationType = .message
-    var duration: CGFloat = 0.5
-    var messageIsFullyDisplayed: Bool = false
-    var messagePosition: HUDMessageNotificationPostiion = .top
+public struct HUDConfig {
+    var notificationType: HUDNotificationType
+    var duration: CGFloat
+    var messageIsFullyDisplayed: Bool
+    var messagePosition: HUDMessageNotificationPostiion
 
     
     init?(dict: Dictionary<String, Any>?) {

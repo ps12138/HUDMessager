@@ -10,10 +10,7 @@ import Foundation
 
 
 class HUDNotificationManager {
-    // MARK: - Singleton
-    private init() {}
-    static let shared = HUDNotificationManager()
-    
+        
     // MARK: - Add Notification
     
     // MARK: - Delete Notification

@@ -13,14 +13,13 @@ import UIKit
 public class HUDMessageView: UIView {
     
     // MARK: - Model
-    var dataSource: HUDDataSource
-    var style: HUDStyle
+    public var dataSource: HUDDataSource
+    public var style: HUDStyle
+    public var config: HUDConfig
     
-    
-    // MARK: - ViewController
+    // MARK: - Controller
     public weak var viewController: UIViewController?
-    
-   
+    internal let notificationManager = HUDNotificationManager()
     
     // MARK: - Views
     internal var image: UIImage?
@@ -79,27 +78,34 @@ public class HUDMessageView: UIView {
     
     init (frame: CGRect,
           dataSource: HUDDataSource,
-          superVC: UIViewController) {
+          style: HUDStyle? = nil,
+          config: HUDConfig? = nil,
+          superVC: UIViewController?) {
         
         self.dataSource = dataSource
+        self.style = style ?? HUDStyle(dict: DefaultStyle)!
+        self.config = config ?? HUDConfig(dict: DefaultConfig)!
+        
         self.viewController = superVC
-        self.style = HUDStyle(dict: DefaultStyle)!
         super.init(frame: frame)
     }
     
     
     convenience init (
-        frame: CGRect,
         dataSource: HUDDataSource,
-        superVC: UIViewController,
-        notificationType: HUDNotificationType,
-        messagePosition: HUDMessageNotificationPostiion,
-        canBeDismissedByUser: Bool,
-        duration: CGFloat,
-        callBack: @escaping ()->(),
-        buttonCallBack: @escaping ()->()
+        config: HUDConfig? = nil,
+        superVC: UIViewController? = nil,
+        callBack: (()->())? = nil,
+        buttonCallBack: (()->())? = nil
     ) {
-        self.init(frame: frame, dataSource: dataSource, superVC: superVC)
+        
+        // setting init
+        let screenFrame = UIApplication.shared.windows[0].bounds
+        self.init(frame: screenFrame, dataSource: dataSource, config: config, superVC: superVC)
+        
+        // setting properties
+        self.callBack = callBack
+        self.buttonCallBack = buttonCallBack
         
         // setting background
         set(blurStyle: true)
@@ -122,7 +128,35 @@ public class HUDMessageView: UIView {
         // setting border
         set(borderWith: style)
         
-        // setting 
+        // setting button
+        
+        var screenSize = UIApplication.shared.windows[0].bounds.size
+
+        if let superVC = superVC {
+            screenSize = superVC.view.bounds.size
+        }
+        
+        // update frame by content
+        // this call also takes care of positioning the labels
+        let actualHeight = self.updateHeight()
+        var topPosition = -actualHeight
+        
+    
+        if self.messagePosition == .bottom {
+            topPosition = screenSize.height
+        }
+        
+        self.frame = CGRect(x: 0.0, y: topPosition, width: screenSize.width, height: actualHeight)
+        
+        if self.messagePosition == .top {
+            self.autoresizingMask = UIViewAutoresizing.flexibleWidth
+        } else {
+            self.autoresizingMask =
+                [UIViewAutoresizing.flexibleWidth,
+                UIViewAutoresizing.flexibleTopMargin,
+                UIViewAutoresizing.flexibleBottomMargin]
+        }
+        
         
     }
 }
