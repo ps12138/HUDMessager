@@ -15,7 +15,8 @@ extension HUDMessageView {
     ///
     override public func layoutSubviews() {
         super.layoutSubviews()
-        let _ = self.updateHeight()
+        let curHeight = self.updateHeight()
+        print("Message.V: update height = \(curHeight)")
     }
     
     /// TODO: - fadeOut

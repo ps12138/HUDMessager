@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct ConfigModel {
+struct HUDStyle {
     var imageName: String
     var backgroundImageName: String
     
@@ -39,17 +39,17 @@ struct ConfigModel {
     
     init?(dict: Dictionary<String, Any>?) {
         guard
-            let imageName = dict?[HUDConfigKeys.imageName] as? String,
-            let backgroundImageName = dict?[HUDConfigKeys.backgroundImageName] as? String,
-            let textColor = dict?[HUDConfigKeys.textColor] as? String,
-            let titleFontSize = dict?[HUDConfigKeys.titleFontSize] as? CGFloat,
-            let shadowColor = dict?[HUDConfigKeys.shadowColor] as? String,
-            let shadowOffsetX = dict?[HUDConfigKeys.shadowOffsetX] as? CGFloat,
-            let shadowOffsetY = dict?[HUDConfigKeys.shadowOffsetY] as? CGFloat,
-            let contentTextColor = dict?[HUDConfigKeys.contentTextColor] as? String,
-            let contentFontSize = dict?[HUDConfigKeys.contentFontSize] as? CGFloat,
-            let borderHeight = dict?[HUDConfigKeys.borderHeight] as? CGFloat,
-            let borderColor = dict?[HUDConfigKeys.borderColor] as? String
+            let imageName = dict?[HUDStyleKeys.imageName] as? String,
+            let backgroundImageName = dict?[HUDStyleKeys.backgroundImageName] as? String,
+            let textColor = dict?[HUDStyleKeys.textColor] as? String,
+            let titleFontSize = dict?[HUDStyleKeys.titleFontSize] as? CGFloat,
+            let shadowColor = dict?[HUDStyleKeys.shadowColor] as? String,
+            let shadowOffsetX = dict?[HUDStyleKeys.shadowOffsetX] as? CGFloat,
+            let shadowOffsetY = dict?[HUDStyleKeys.shadowOffsetY] as? CGFloat,
+            let contentTextColor = dict?[HUDStyleKeys.contentTextColor] as? String,
+            let contentFontSize = dict?[HUDStyleKeys.contentFontSize] as? CGFloat,
+            let borderHeight = dict?[HUDStyleKeys.borderHeight] as? CGFloat,
+            let borderColor = dict?[HUDStyleKeys.borderColor] as? String
         else {
             return nil
         }
@@ -66,8 +66,8 @@ struct ConfigModel {
         self.borderHeight = borderHeight
         self.borderColor = borderColor
         
-        self.titleFontName = dict?[HUDConfigKeys.titleFontName] as? String
-        self.contentFontName = dict?[HUDConfigKeys.contentFontName] as? String
+        self.titleFontName = dict?[HUDStyleKeys.titleFontName] as? String
+        self.contentFontName = dict?[HUDStyleKeys.contentFontName] as? String
     }
 }
 

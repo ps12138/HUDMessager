@@ -12,10 +12,9 @@ import UIKit
 // MARK: - Properties
 public class HUDMessageView: UIView {
     
-    // MARK: - variables
-    public var title: String
-    public var content: String?
-    public var buttonTitle: String?
+    // MARK: - Model
+    var dataSource: HUDDataSource
+    var style: HUDStyle
     
     
     // MARK: - ViewController
@@ -43,7 +42,7 @@ public class HUDMessageView: UIView {
     public var successIcon: UIImage?
     public var warningIcon: UIImage?
     
-    internal var config: ConfigModel?
+    
     
     // MARK: - config
     //internal var canBeDismissedByUser: Bool
@@ -79,24 +78,19 @@ public class HUDMessageView: UIView {
     
     
     init (frame: CGRect,
-          title: String,
-          content: String?,
-          buttonTitle: String?,
+          dataSource: HUDDataSource,
           superVC: UIViewController) {
         
-        self.title = title
-        self.content = content
-        self.buttonTitle = buttonTitle
+        self.dataSource = dataSource
         self.viewController = superVC
+        self.style = HUDStyle(dict: DefaultStyle)!
         super.init(frame: frame)
     }
     
     
     convenience init (
         frame: CGRect,
-        title: String,
-        content: String?,
-        buttonTitle: String?,
+        dataSource: HUDDataSource,
         superVC: UIViewController,
         notificationType: HUDNotificationType,
         messagePosition: HUDMessageNotificationPostiion,
@@ -105,26 +99,19 @@ public class HUDMessageView: UIView {
         callBack: @escaping ()->(),
         buttonCallBack: @escaping ()->()
     ) {
-        self.init(frame: frame, title: title, content: content, buttonTitle: buttonTitle, superVC: superVC)
-        
-        // init config
-        guard let config = ConfigModel(dict: TestStyle) else {
-            print("HUD.M: fail to get config")
-            return
-        }
-        self.config = config
+        self.init(frame: frame, dataSource: dataSource, superVC: superVC)
         
         // setting background
         set(blurStyle: true)
         
         // setting titleLabel
-        titleLabel = set(titleLabelWith: config)
+        titleLabel = set(titleLabelWith: style)
         
         // setting contentLabel
-        contentLabel = set(contentLabelWith: config)
+        contentLabel = set(contentLabelWith: style)
         
         // setting image
-        self.image = UIImage.bundledImageNamed(name: config.imageName, related: type(of:self))
+        self.image = UIImage.bundledImageNamed(name: style.imageName, related: type(of:self))
         // setting textSpace
         self.textSpaceLeft = padding * 2
         if let image = self.image {
@@ -133,7 +120,7 @@ public class HUDMessageView: UIView {
         }
         
         // setting border
-        set(borderWith: config)
+        set(borderWith: style)
         
         // setting 
         

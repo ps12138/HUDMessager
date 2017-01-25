@@ -39,14 +39,14 @@ extension HUDMessageView {
     }
     
     ///
-    internal func set(titleLabelWith config: ConfigModel) -> UILabel {
+    internal func set(titleLabelWith style: HUDStyle) -> UILabel {
         let label = UILabel()
-        label.text = title
-        label.textColor = UIColor.getColor(RGBstring: config.textColor)
+        label.text = dataSource.title
+        label.textColor = UIColor.getColor(RGBstring: style.textColor)
         label.backgroundColor = UIColor.clear
-        label.font = UIFont.systemFont(ofSize: config.titleFontSize)
-        label.shadowColor = UIColor.getColor(RGBstring: config.shadowColor)
-        label.shadowOffset = CGSize(width: config.shadowOffsetX, height: config.shadowOffsetY)
+        label.font = UIFont.systemFont(ofSize: style.titleFontSize)
+        label.shadowColor = UIColor.getColor(RGBstring: style.shadowColor)
+        label.shadowOffset = CGSize(width: style.shadowOffsetX, height: style.shadowOffsetY)
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         self.addSubview(label)
@@ -54,18 +54,18 @@ extension HUDMessageView {
     }
 
     ///
-    internal func set(contentLabelWith config: ConfigModel) -> UILabel? {
+    internal func set(contentLabelWith style: HUDStyle) -> UILabel? {
         
-        guard let content = content else {
+        guard let content = dataSource.content else {
             return nil
         }
         let label = UILabel()
         label.text = content
-        label.textColor = UIColor.getColor(RGBstring: config.contentTextColor)
+        label.textColor = UIColor.getColor(RGBstring: style.contentTextColor)
         label.backgroundColor = UIColor.clear
-        label.font = UIFont.systemFont(ofSize: config.contentFontSize)
-        label.shadowColor = UIColor.getColor(RGBstring: config.shadowColor)
-        label.shadowOffset = CGSize(width: config.shadowOffsetX, height: config.shadowOffsetY)
+        label.font = UIFont.systemFont(ofSize: style.contentFontSize)
+        label.shadowColor = UIColor.getColor(RGBstring: style.shadowColor)
+        label.shadowOffset = CGSize(width: style.shadowOffsetX, height: style.shadowOffsetY)
         label.numberOfLines = 0;
         label.lineBreakMode = .byWordWrapping
         self.addSubview(label)
@@ -82,14 +82,14 @@ extension HUDMessageView {
     }
     
     ///
-    internal func set(borderWith config: ConfigModel) {
+    internal func set(borderWith style: HUDStyle) {
         
         guard let screenWidth = self.viewController?.view.bounds.size.width else {
             return
         }
         
-        let borderView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: screenWidth, height: config.borderHeight))
-        borderView.backgroundColor = UIColor.getColor(RGBstring: config.borderColor)
+        let borderView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: screenWidth, height: style.borderHeight))
+        borderView.backgroundColor = UIColor.getColor(RGBstring: style.borderColor)
         borderView.autoresizingMask = .flexibleWidth
         self.addSubview(borderView)
     }

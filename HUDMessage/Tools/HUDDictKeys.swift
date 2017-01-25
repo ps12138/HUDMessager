@@ -8,28 +8,12 @@
 
 import Foundation
 
-let TestStyle: Dictionary<String, String> = [
-    "imageName" : "TODO",
-    "backgroundImageName" : "TODO",
-    "textColor" : "EE352E",
-    "titleFontSize" : "15",
-    //"titleFontName" : "",
-    "shadowColor" : "EE352E",
-    "shadowOffsetX" : "20",
-    "shadowOffsetY" : "20",
-    
-    "contentTextColor" : "EE352E",
-    "contentFontSize" : "15",
-    //"contentFontName" : ""
-    "buttonBackgroundImageName" : "TODO",
-    "notificationButtonBackground" : "TODO",
-    "buttonTitleShadowColor" : "EE352E",
-    "buttonTitleTextColor" : "EE352E",
-    "buttonTitleShadowOffsetX" : "20",
-    "buttonTitleShadowOffsetY" : "20",
-    "borderHeight" : "TODO",
-    "borderColor" : "TODO",
-]
+struct HUDDataKeys {
+    static let title = "title"
+    static let content = "content"
+    static let buttonTitle = "buttonTitle"
+}
+
 
 struct HUDMessageTypeKeys {
     static let message = "message"
@@ -39,8 +23,17 @@ struct HUDMessageTypeKeys {
 }
 
 
-
 struct HUDConfigKeys {
+    static let notifyType = "notifyType"
+    static let duration = "duration"
+    static let fullyDisplayed = "fullyDisplayed"
+    static let messagePos = "messagePos"
+}
+
+
+
+
+struct HUDStyleKeys {
     static let imageName = "imageName"
     static let backgroundImageName = "backgroundImageName"
     static let textColor = "textColor"
