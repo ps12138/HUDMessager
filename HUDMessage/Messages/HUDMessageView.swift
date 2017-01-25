@@ -14,7 +14,7 @@ public class HUDMessageView: UIView {
     
     // MARK: - variables
     public var title: String
-    public var subtitle: String?
+    public var content: String?
     public var buttonTitle: String?
     
     
@@ -26,9 +26,9 @@ public class HUDMessageView: UIView {
     // MARK: - View
     internal var image: UIImage?
     internal var titleLabel: UILabel!
-    internal var contentLabel: UILabel!
+    internal var contentLabel: UILabel?
     internal var iconImageView: UIImageView!
-    internal var button: UIButton!
+    internal var button: UIButton?
     internal var borderView: UIView!
     internal var backgroundImageView: UIImageView!
     internal var backgroundBlurView: UIImageView!
@@ -80,12 +80,12 @@ public class HUDMessageView: UIView {
     
     init (frame: CGRect,
           title: String,
-          subtitle: String,
-          buttonTitle: String,
+          content: String?,
+          buttonTitle: String?,
           superVC: UIViewController) {
         
         self.title = title
-        self.subtitle = subtitle
+        self.content = content
         self.buttonTitle = buttonTitle
         self.viewController = superVC
         super.init(frame: frame)
@@ -95,8 +95,8 @@ public class HUDMessageView: UIView {
     convenience init (
         frame: CGRect,
         title: String,
-        subtitle: String,
-        buttonTitle: String,
+        content: String?,
+        buttonTitle: String?,
         superVC: UIViewController,
         notificationType: HUDNotificationType,
         messagePosition: HUDMessageNotificationPostiion,
@@ -105,7 +105,7 @@ public class HUDMessageView: UIView {
         callBack: @escaping ()->(),
         buttonCallBack: @escaping ()->()
     ) {
-        self.init(frame: frame, title: title, subtitle: subtitle, buttonTitle: buttonTitle, superVC: superVC)
+        self.init(frame: frame, title: title, content: content, buttonTitle: buttonTitle, superVC: superVC)
         
         // init config
         guard let config = ConfigModel(dict: TestStyle) else {

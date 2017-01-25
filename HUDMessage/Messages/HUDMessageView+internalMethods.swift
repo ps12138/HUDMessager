@@ -54,9 +54,13 @@ extension HUDMessageView {
     }
 
     ///
-    internal func set(contentLabelWith config: ConfigModel) -> UILabel {
+    internal func set(contentLabelWith config: ConfigModel) -> UILabel? {
+        
+        guard let content = content else {
+            return nil
+        }
         let label = UILabel()
-        label.text = subtitle
+        label.text = content
         label.textColor = UIColor.getColor(RGBstring: config.contentTextColor)
         label.backgroundColor = UIColor.clear
         label.font = UIFont.systemFont(ofSize: config.contentFontSize)
@@ -91,21 +95,82 @@ extension HUDMessageView {
     }
     
     ///
-    internal func updateHeight() {
-        guard let screenWidth = self.viewController?.view.bounds.size.width else {
-            return
+    internal func updateHeight() -> CGFloat {
+        guard let screenWidth = self.viewController?.view.bounds.size.width
+            else {
+            return 0.0
         }
         let padding = self.padding
+        var currentHeight: CGFloat = 0.0
         
         // setting size of titleLabel
-        self.titleLabel.frame = CGRect(x: self.textSpaceLeft, y: padding, width: screenWidth - padding - self.textSpaceLeft - self.textSpaceRight, height: 0.0)
+        titleLabel.frame = CGRect(x: self.textSpaceLeft, y: padding, width: screenWidth - padding - self.textSpaceLeft - self.textSpaceRight, height: 0.0)
         titleLabel.sizeToFit()
         
         // setting size of contentLabel
-        self.contentLabel.frame = CGRect(x: self.textSpaceLeft, y: self.titleLabel.frame.origin.y + titleLabel.frame.size.height + 5.0, width: screenWidth - padding - self.textSpaceLeft - self.textSpaceRight, height: 0.0)
-        contentLabel.sizeToFit()
+        if let contentLabel = self.contentLabel {
+            contentLabel.frame = CGRect(
+                x: self.textSpaceLeft,
+                y: self.titleLabel.frame.origin.y + self.titleLabel.frame.size.height + 5.0,
+                width: screenWidth - padding - self.textSpaceLeft - self.textSpaceRight,
+                height: 0.0)
+            contentLabel.sizeToFit()
+            currentHeight = contentLabel.frame.origin.y + contentLabel.frame.size.height
+        } else {
+            currentHeight = self.titleLabel.frame.origin.y + self.titleLabel.frame.size.height
+        }
+        currentHeight += padding
         
+        
+        // setting iconImageView
+        // if icon is larger
+        if self.iconImageView.frame.origin.y + self.iconImageView.frame.size.height + padding > currentHeight {
+            currentHeight = self.iconImageView.frame.origin.y + self.iconImageView.frame.size.height + padding
+        } else {
+        // if icon is small, set it in center
+            self.iconImageView.center = CGPoint(x: self.iconImageView.center.x, y: round(currentHeight / 2.0))
+        }
+        
+        // setting button
+        //self.button?.center = CGPoint(x: self.button.center.x, y: round(currentHeight / 2.0))
+        
+        // setting messagePosition
+        if self.messagePosition == HUDMessageNotificationPostiion.top {
+            var borderframe = self.borderView.frame
+            borderframe.origin.y = currentHeight
+            self.borderView.frame = borderframe
+        }
+        currentHeight += self.borderView.frame.size.height
+        self.frame = CGRect(x: 0.0, y: self.frame.origin.y, width: self.frame.size.width, height: currentHeight)
+        
+        // setting button
+        if let button = self.button {
+            button.center = CGPoint(x: button.center.x, y: round(currentHeight / 2.0))
+            button.frame = CGRect(
+                x: self.frame.size.width - self.textSpaceRight,
+                y: round((self.frame.size.height / 2.0) - button.frame.size.height / 2.0),
+                width: button.frame.size.width,
+                height: button.frame.size.height)
+        }
+        
+        // setting background
+        let backgroundFrame = CGRect(
+            x: self.backgroundImageView.frame.origin.x,
+            y: self.backgroundImageView.frame.origin.y,
+            width: screenWidth,
+            height: currentHeight)
+        
+        // TODO spring animation?
+        
+        // isNavBarHidden ?
+        // isNavBarOpaque ?
+        self.backgroundImageView.frame = backgroundFrame
+        self.backgroundBlurView.frame = backgroundFrame
+        
+        return currentHeight
     }
+    
+    
     
 }
 
