@@ -30,7 +30,7 @@ class HUDMessageController {
     static let shared = HUDMessageController()
     
     // MARK: - properties
-    internal var messages = Dictionary<String, HUDMessageView>()
+    internal var messages = Array<HUDMessageView>()
     
     
     
@@ -64,8 +64,11 @@ class HUDMessageController {
     // prepare to show
     func prepare(messageView: HUDMessageView) {
         let title = messageView.dataSource.title
-        if messages[title] == nil {
-            messages[title] = messageView
+        for view in self.messages {
+            // avoid duplication
+            if title == view.dataSource.title {
+                return
+            }
         }
         
         if isActiveNotify == false {
@@ -76,7 +79,37 @@ class HUDMessageController {
     
     /// fade in current
     func fadeIn() {
+        // if no messages
+        if self.messages.count == 0 {
+            return
+        }
         
+        var currentView = self.messages[0]
+        var verticalOffset: CGFloat = 0.0
+        // if messageView shouldnot cover navBar
+        func addStatusBarHeightToVerticalOffset() {
+            if currentView.config.messagePosition != .topCoverNavBar {
+                let statusBarSize = UIApplication.shared.statusBarFrame.size
+                verticalOffset += min(statusBarSize.height, statusBarSize.width)
+            }
+        }
+        
+        // if currentView.parentVC is NavCon or embedded in NavCon
+        if let currentNavCon = (currentView.viewController as? UINavigationController) ?? currentView.viewController?.navigationController {
+            
+            // hasNavBar, uncover NavBar
+            if self.isNavigationBarHidden(navController: currentNavCon) == false && currentView.config.messagePosition != .topCoverNavBar{
+                currentNavCon.view.insertSubview(currentView, belowSubview: currentNavCon.navigationBar)
+                verticalOffset = currentNavCon.navigationBar.bounds.size.height
+                addStatusBarHeightToVerticalOffset()
+            } else {
+                currentView.viewController?.view.addSubview(currentView)
+                addStatusBarHeightToVerticalOffset()
+            }
+        } else {
+            currentView.viewController?.view.addSubview(currentView)
+            addStatusBarHeightToVerticalOffset()
+        }
     }
     
     
