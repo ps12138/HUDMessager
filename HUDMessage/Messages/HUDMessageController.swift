@@ -165,7 +165,7 @@ class HUDMessageController {
         if currentView.config.duration < Constants.messageNotificationDurationEndless  {
             let dispatchTime = DispatchTime.now() + currentView.config.duration
             DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: {
-                self.fadeOutNotification(messageView: currentView, comletion: nil)
+                self.fadeOutNotification(currentView, comletion: nil)
             })
         }
         
@@ -216,9 +216,40 @@ class HUDMessageController {
     }
     
     
-    func fadeOutNotification(messageView: HUDMessageView, comletion: (()->Void)?) {
+    func fadeOutNotification(_ currentView: HUDMessageView, comletion: (()->Void)?) {
+        currentView.config.messageIsFullyDisplayed = false
+        // TODO: disable previous slector
         
-    }
+        //
+        guard let parentVC = currentView.viewController else {
+            print("HUDMessage.C: no parent vc")
+            return
+        }
+        
+        var fadeOutToPoint = CGPoint()
+        if currentView.config.messagePosition != .bottom {
+            fadeOutToPoint.x = currentView.center.x
+            fadeOutToPoint.y = -currentView.frame.size.height / 2.0
+        } else {
+            fadeOutToPoint.x = currentView.center.x
+            fadeOutToPoint.y = parentVC.view.bounds.size.height + currentView.frame.size.height / 2.0
+        }
+        
+        // animation
+        UIView.animate(
+            withDuration: Constants.messageAnimationDuration,
+            animations: {
+                currentView.center = fadeOutToPoint
+                
+        }) { (result) in
+            currentView.removeFromSuperview()
+            
+            if self.messages.isEmpty = false {
+                self.messages.remove(at: 0)
+            }
+            
+            noticationActive = false
+        }    }
     
     
 }
