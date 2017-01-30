@@ -11,7 +11,7 @@ import UIKit
 
 public struct HUDConfig {
     var notificationType: HUDNotificationType
-    var duration: CGFloat
+    var duration: TimeInterval
     var messageIsFullyDisplayed: Bool
     var messagePosition: HUDMessageNotificationPostiion
 
@@ -20,7 +20,7 @@ public struct HUDConfig {
         guard
             let dict = dict,
             let notificationType = dict[HUDConfigKeys.notifyType] as? HUDNotificationType,
-            let duration = dict[HUDConfigKeys.duration] as? CGFloat,
+            let duration = dict[HUDConfigKeys.duration] as? TimeInterval,
             let messageIsFullyDisplayed = dict[HUDConfigKeys.fullyDisplayed] as? Bool,
             let messagePosition = dict[HUDConfigKeys.messagePos] as? HUDMessageNotificationPostiion
             else {
